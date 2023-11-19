@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '1.9.20'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group = 'pl.pomoku'
@@ -48,6 +49,19 @@ processResources {
         expand props
     }
 }
+
+jar {
+    enabled = false
+}
+
+shadowJar {
+    archiveBaseName.set(project.name)
+    archiveVersion.set(project.version)
+    archiveClassifier.set('')
+}
+
+build.dependsOn shadowJar
+
 kotlin {
     jvmToolchain(17)
 }
