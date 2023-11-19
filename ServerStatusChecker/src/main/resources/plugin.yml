@@ -1,0 +1,4 @@
+name: ServerStatusChecker
+version: '${version}'
+main: pl.pomoku.serverstatuschecker.ServerStatusChecker
+api-version: '1.20'

@@ -1,0 +1,4 @@
+name: Lobby
+version: '${version}'
+main: pl.pomoku.lobby.Lobby
+api-version: '1.20'
