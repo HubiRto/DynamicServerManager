@@ -1,7 +1,6 @@
-package pl.pomoku.dynamicservercontroller;
+package pl.pomoku.dynamicservercontroller
 
 // The constants are replaced before compilation
-public class BuildConstants {
-
-    public static final String VERSION = "${version}";
+object BuildConstants {
+    const val VERSION = "\${version}"
 }

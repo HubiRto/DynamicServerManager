@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'eclipse'
     id "org.jetbrains.gradle.plugin.idea-ext" version "1.0.1"
+    id 'org.jetbrains.kotlin.jvm' version '1.9.20'
 }
 
 group = 'pl.pomoku'
@@ -18,13 +19,12 @@ repositories {
 dependencies {
     compileOnly "com.velocitypowered:velocity-api:3.2.0-SNAPSHOT"
     annotationProcessor "com.velocitypowered:velocity-api:3.2.0-SNAPSHOT"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 def targetJavaVersion = 11
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
-    sourceCompatibility = javaVersion
-    targetCompatibility = javaVersion
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
@@ -53,3 +53,6 @@ sourceSets.main.java.srcDir(generateTemplates.map { it.outputs })
 
 rootProject.idea.project.settings.taskTriggers.afterSync generateTemplates
 project.eclipse.synchronizationTasks(generateTemplates)
+kotlin {
+    jvmToolchain(11)
+}

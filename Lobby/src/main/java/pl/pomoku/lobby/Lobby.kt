@@ -1,17 +1,13 @@
-package pl.pomoku.lobby;
+package pl.pomoku.lobby
 
-import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.java.JavaPlugin
 
-public final class Lobby extends JavaPlugin {
-
-    @Override
-    public void onEnable() {
+class Lobby : JavaPlugin() {
+    override fun onEnable() {
         // Plugin startup logic
-
     }
 
-    @Override
-    public void onDisable() {
+    override fun onDisable() {
         // Plugin shutdown logic
     }
 }
