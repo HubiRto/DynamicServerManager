@@ -58,7 +58,7 @@ class ItemBuilder(@NotNull material: Material) {
         if (skullMeta != null) item.setItemMeta(skullMeta)
         if (itemMeta == null) itemMeta = item.itemMeta
         if (name != null) itemMeta!!.displayName(name)
-        if (!lore.isEmpty()) itemMeta!!.lore(lore)
+        if (lore.isNotEmpty()) itemMeta!!.lore(lore)
         item.setItemMeta(itemMeta)
         return item
     }
