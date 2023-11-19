@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'pl.pomoku'
-version = '1.0-SNAPSHOT'
+version = '1.0'
 
 repositories {
     mavenCentral()
@@ -58,7 +58,9 @@ shadowJar {
     archiveBaseName.set(project.name)
     archiveVersion.set(project.version)
     archiveClassifier.set('')
+    destinationDirectory = file('/home/hubirto/Desktop/TestServer/plugins')
 }
+
 
 build.dependsOn shadowJar
 
